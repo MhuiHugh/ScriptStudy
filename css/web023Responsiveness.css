@@ -1,0 +1,62 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.heading,
+.container,
+.footing{
+    margin: 10px auto;
+}
+
+
+.heading{
+    height: 160px;
+    background-color: darkcyan;
+}
+
+
+.left,
+.main,
+.right{
+    background-color:greenyellow;
+}
+
+.footing{
+    height: 100px;
+    background-color: cornflowerblue;
+}
+
+
+@media screen and (min-width: 960px) {
+    .heading,
+    .container,
+    .footing{
+        width:970px;
+    }
+
+    .left,
+    .main,
+    .right{
+        float: left;
+        height: 560px;
+    }
+
+    .left,
+    .right{
+        width: 250px;
+    }
+   .main{
+       margin-left: 5px;
+       margin-right: 5px;
+       width: 460px;
+   }
+   .container{
+       height: 560px;
+   }
+}
+
+@media screen and (min-width: 600px) and (max-width: 960px) {
+    
+}

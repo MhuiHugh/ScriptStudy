@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+        <html>
+          <head lang="en">
+           <meta charset="utf-8">
+              <title>JavaScript学习</title>
+          </head>
+<body>
+
+<!--数据类型-->
+<script>
+    var string="Hello World!";//字符串
+    var i=10;//数字
+    var boo=true;//Boolean值
+    var arr=new Array();//数组
+    arr[0]=0;
+    arr[1]=1;
+    var n=null;//空值
+    document.write(arr[1]);//输出语句
+</script>
+
+<!--函数，方法-->
+<script>
+   //函数调用
+    function add(a,b){
+    var sum=a+b;
+    return sum;
+    }
+    var v1=add(1,2);
+    alert(v1);
+
+   //方法
+    function sayhello(){
+    alert("hello!");
+    }
+   //带参方法
+    function saypeople(name,age){
+    alert("Hello:"+name+"我的年龄是："+age);
+    }
+   //带返回值方法
+    function say(){
+    return "what?";
+    }
+    var v2=say();
+    alert(v2);
+</script>
+<form><input type="button" value="确定" onclick="sayhello()"></form>
+<button onclick="sayhello()">按钮</button>
+<button onclick="saypeople('孟辉',23)">人们</button>
+
+</body>
+        </html>

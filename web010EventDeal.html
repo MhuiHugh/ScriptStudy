@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JavaScript事件流</title>
+</head>
+<body>
+<div id="div1">
+    <button id="ibu">OK</button>
+</div>
+
+
+<!--<script>-->
+    <!--//Dom0级事件处理-->
+    <!--var btn1=document.getElementById("ibu");-->
+    <!--btn1.onclick=function(){-->
+        <!--alert("事件0级处理001！");-->
+    <!--}-->
+    <!--btn1.onclick=function(){-->
+        <!--alert("事件0级处理002！");-->
+    <!--}-->
+    <!--//删除事件处理-->
+    <!--btn1.onclick=null;-->
+<!--</script>-->
+
+<!--<script>-->
+    <!--//Dom2级事件处理-->
+    <!--var btn1=document.getElementById("ibu");-->
+    <!--btn1.addEventListener("click",demo);-->
+    <!--btn1.addEventListener("click",demo1);-->
+    <!--btn1.addEventListener("click",demo2);-->
+    <!--//移除事件-->
+    <!--btn1.removeEventListener("click",demo1);-->
+    <!--function demo(){-->
+       <!--alert("Dom2级事件处理！");-->
+    <!--}-->
+
+    <!--function demo1(){-->
+        <!--alert("Dom2级事件处理1！");-->
+    <!--}-->
+
+    <!--function demo2(){-->
+        <!--alert("Dom2级事件处理2！");-->
+    <!--}-->
+<!--</script>-->
+
+<script>
+    //IE8以下版本兼容监听
+    var btn1=document.getElementById("ibu");
+    if(btn1.addEventListener){
+      btn1.addEventListener("click",demo);
+    }else if(btn1.attachEvent){//IE8以下版本兼容监听
+        btn1.attachEvent("click",demo);
+    }else{
+        btn1.onclick=demo();
+    }
+    function demo(){
+        alert("Say Hello!");
+    }
+</script>
+</body>
+</html>

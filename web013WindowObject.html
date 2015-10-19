@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Windeow对象</title>
+</head>
+<body>
+<button id="btn" onclick="btnClicked()">确定</button>
+<button id="btn1" onclick="stopReloadTime()">停止时间刷新</button>
+<a id="aid">Time</a>
+<button id="btn2">历史跳转</button>
+</br>
+<script>
+    document.write("浏览器宽高(只浏览器显示部分，不包含状态栏收藏夹)：" + window.innerWidth + "--" + window.innerHeight);
+
+    /**
+     * window对象
+     */
+    function btnClicked() {
+        //打开资源地址，打开窗口名字，新窗口宽高位置,工具栏是否显示，进度条等是否显示都可以设置
+        window.open("web013WindowObjectTest.html", "windowname", "height=200,width=200,top=50,left=100，toolbar =no");
+    }
+
+    var mytime = setInterval(reloadTime, 1000);
+    /**
+     *刷新当前时间
+     */
+    function reloadTime() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        document.getElementById("aid").innerHTML = t;
+    }
+
+    /**
+     * 停止时间刷新
+     */
+    function stopReloadTime() {
+        clearInterval(mytime);
+    }
+
+    /**
+     * 定时任务，等待多长时间后执行
+     */
+//    var win=delayTime();
+    function delayTime() {
+        alert("hello!");
+        win = setTimeout(delayTime, 3000);
+    }
+
+    function goBack(){
+
+    }
+</script>
+</body>
+</html>

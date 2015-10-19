@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title>事件监听</title>
+    <link rel="stylesheet" type="text/css" href="web005events.css">
+</head>
+<body onload="loadOver()">
+<button  onclick="demo()">Test</button>
+<div class="div1" onmouseout="onOut(this)" onmouseover="onOver(this)"></div>
+<form>
+<input type="text"
+</form>
+<script>
+    function demo(){
+     alert("Hello Test!");
+    }
+	function onOut(ooj){
+	ooj.innerHTML="Hello";
+	}
+	function onOver(ooj){
+	ooj.innerHTML="World!";
+	}
+	function loadOver(){
+	 alert("网页加载完成！在body中监听");
+	}
+</script>
+</body>
+</html>

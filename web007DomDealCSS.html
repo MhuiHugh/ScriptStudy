@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Dom操作HTML</title>
+</head>
+<body>
+<a id="aid" href="http://www.baidu.com">Baidu</a>
+<p id="pid">Hello!</p>
+<button onclick="demo()">改变内容</button>
+<button onclick="test()">改变属性</button>
+<script>
+    function demo(){
+        // document.write("Hello Dom!");
+        //改变HTML内容
+        var nv= document.getElementById("pid").innerHTML="What?";
+    }
+
+
+    function test(){
+        document.getElementById("aid").href="http://www.jikexueyuan.com";
+    }
+</script>
+</body>
+</html>

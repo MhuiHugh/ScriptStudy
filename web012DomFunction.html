@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Dom操作HTML方法详解</title>
+</head>
+<body onload="getChildNode()">
+   <p name="pn">Hello</p>
+   <p name="pn">World</p>
+   <p name="pn">What</p>
+   <a id="aid" title="获取a标签属性">你好！</a>
+   <div id="pid">
+   <ul><li>1</li><li>2</li><li>3</li></ul>
+   </div>
+<script>
+    /**
+     * 改变内容
+     */
+    function getName(){
+    var count=document.getElementsByTagName("p");
+    document.write("集合长度："+count.length);
+    var pcount=count[2];
+    pcount.innerHTML="World Change!";
+    }
+    /**
+     * 得到元素属性，设置属性
+     */
+    function getAttr(){
+     var an=document.getElementById("aid");
+        var attr=an.getAttribute("title");
+        alert(attr);
+        an.setAttribute("title","重设a标签属性");
+        var attr1=an.getAttribute("title");
+        alert(attr1);
+    }
+
+    /**
+     * 获取子节点
+     */
+    function getChildNode(){
+        var chil=document.getElementsByTagName("ul")[0].childNodes;
+       alert(chil.length);
+    }
+
+    /**
+     * 获取父节点
+     */
+    function getParentNode(){
+     var div=document.getElementById("pid");
+        alert(div.parentNode.nodeName);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title>异常捕获和处理</title>
+</head>
+<body>
+<form>
+    <input id="txt" type="text">
+    <input id="ok" type="submit" onclick="test()" value="提交">
+</form>
+
+<script>
+    function demo(){
+    try{
+       alert(str);
+    }catch(err){
+    alert("error:"+err);
+    }
+    }
+
+function test(){
+var vv=document.getElementById("txt").value;
+alert(value);
+try{
+if(vv==""){
+throw "请输入！";
+}catch(err){
+alert(err);
+}
+}
+     //demo();
+
+</script>
+</body>
+</html>

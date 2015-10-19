@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JavaScript对象</title>
+</head>
+<body onload="startTime()">
+<div id="time"></div>
+<script>
+    //创建对象方法一
+//    people=new Object();
+//    people.name="王二";
+//    people.age="30";
+    //创建对象方法二
+//    people={name:"Hello",age:"20"};
+//    document.write(people.name+"--"+people.age);
+    //创建对象方法三(在方法中创建对象)
+    function people(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    son =new people("World",16);
+    //----------
+    document.write(son.name+"--"+son.age);
+    //String对象
+    var str="Hello,World!";
+    document.write("String对象：长度"+str.length+"--位置："+
+    str.indexOf("W")+"--校验："+str.match("W")+"--替换："+str.replace("W","A")+"--大小写切换："+
+    str.toUpperCase()+"--分割数组"+str.split(","));
+
+    //Date日期对象
+    var da=new Date();
+    document.write(da);
+
+    function startTime(){
+        var aTime=new Date();
+        var h=aTime.getHours();
+        var m=aTime.getMinutes();
+        var s=aTime.getSeconds();
+        m=checkTime(m);
+        s=checkTime(s);
+        document.getElementById("time").innerHTML=h+":"+m+":"+s;
+
+        //定时更新事件
+        t=setTimeout(function(){
+            startTime();
+        },500);
+    }
+
+    /**
+     * 处理小于10事件长度变化
+     * @param i
+     * @returns {*}
+     */
+    function checkTime(i){
+        if(i<10){
+            i="0"+i;
+        }
+        return i;
+    }
+
+
+    //数组对象
+    var a=["Hello","World","What"];
+
+</script>
+</body>
+</html>

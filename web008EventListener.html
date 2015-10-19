@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JavaScript-EventListener</title>
+</head>
+<body>
+   <button id="bid">OK</button>
+   <script>
+       var x=document.getElementById("bid");
+       //设置监听
+       x.addEventListener("click",hello);
+       x.addEventListener("click",world);
+       //移除监听
+       x.removeEventListener("click",hello);
+
+       function hello(){
+           alert("you say hello!");
+       }
+
+       function world(){
+           alert("i say world!");
+       }
+   </script>
+</body>
+</html>
